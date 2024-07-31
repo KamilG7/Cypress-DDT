@@ -9,7 +9,7 @@ const myAccountPage = new MyAccountPage()
 
 
    
-    describe('Read CSV', () => {
+    describe('Rgistration functionality [S_1001], [S_1002]', () => {
         let dataNOK;
               
         before(() => {
@@ -40,15 +40,15 @@ const myAccountPage = new MyAccountPage()
    })
       }
 
-      it('Correct registration. [S_1001], [TC_1001]', () => {
-        cy.visit('')
-        registrationPage.navigateTo
-        cy.typeAssert(registrationPage.emailInput, userData.email)
-        cy.typeAssert(registrationPage.passwordInput, userData.password)
-        registrationPage.submitButton.click()
-        cy.isDisplayed(myAccountPage.logOutButton)
-        myAccountPage.logOutButton.click()
-
+        it('Correct registration. [S_1001], [TC_1001]', () => {
+            cy.visit('')
+            registrationPage.navigateTo
+            cy.typeAssert(registrationPage.emailInput, userData.email)
+            cy.typeAssert(registrationPage.passwordInput, userData.password)
+            registrationPage.submitButton.click()
+            cy.isDisplayed(myAccountPage.logOutButton)
+            myAccountPage.logOutButton.click()
+            registrationPage.pageLoaded
       })
 
            })

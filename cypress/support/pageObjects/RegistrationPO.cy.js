@@ -26,6 +26,22 @@ class RegistrationPage {
         return cy.get("ul[role='alert']>li")
     }
 
+    get loginEmailInput () {
+        return cy.get("[id='username']")
+    }
+
+    get loginPasswordInput () {
+        return cy.get("#password")
+    }
+
+    get logInButton () {
+        return cy.get("button").contains("Log in")
+    }
+
+    get logInError () {
+        return cy.get()
+    }
+
 
 
 }

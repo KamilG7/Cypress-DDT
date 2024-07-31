@@ -1,0 +1,8 @@
+[
+    { "email": "incorrectmejl@gmail.com", "password": "someWh4tStron%$#67815", "error": "Incorrect username or password"},
+    { "email": "okmejl@gmail.com", "password": "xxx4" , "error": "Incorrect username or password"},
+    { "email": "incorrectmejl@gmail.com", "password": "xxx4",  "error": "Incorrect username or password"},
+    { "email": "#BLANK", "password": "someWh4tStron%$#67815", "error": "Username is required"},
+    { "email": "okmejl@gmail.com", "password": "#BLANK" , "error": "The password field is empty"},
+    { "email": "#BLANK", "password": "#BLANK",  "error": "Username is required"}
+  ]
