@@ -11,7 +11,20 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
-//
+
+Cypress.Commands.add('typeAssert', (locator, input) => {
+    locator.type(input).should("have.value", input)
+})
+
+Cypress.Commands.add('isDisplayed', (locator) => {
+    locator.should("be.visible")
+})
+
+Cypress.Commands.add('checkAssert', (locator) => {
+    locator.click().should("be.checked")
+})
+
+
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
