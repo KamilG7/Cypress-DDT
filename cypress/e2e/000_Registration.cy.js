@@ -40,7 +40,7 @@ const myAccountPage = new MyAccountPage()
    })
       }
 
-        it('Correct registration. [S_1001], [TC_1001]', () => {
+        it(`Correct registration. [S_1001], [TC_1001]. Email: ${userData.email}, Password: ${userData.password}`, () => {
             cy.visit('')
             registrationPage.navigateTo
             cy.typeAssert(registrationPage.emailInput, userData.email)

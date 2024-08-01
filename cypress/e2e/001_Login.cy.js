@@ -11,9 +11,9 @@ const myAccountPage = new MyAccountPage()
 describe("Login functionality [S_1003], [S_1004]", () => {
 
     failedLogin.forEach((credentials) => {
-        it(`Failed login should trigger correct error msg [TC_1007], [TC_1008], [TC_1009], [TC_1010], [TC_1011], [TC_1012].
+        it(`Failed login should trigger correct error msg [S_1004], [TC_1007], [TC_1008], [TC_1009], [TC_1010], [TC_1011], [TC_1012].
              Email: ${credentials.email}, password: ${credentials.password}`, () => {
-            cy.visit("")
+            cy.visit('')
             registrationPage.navigateTo
             if(failedLogin.email != "#BLANK") {
                 cy.typeAssert(registrationPage.loginEmailInput, credentials.email) }
@@ -22,5 +22,16 @@ describe("Login functionality [S_1003], [S_1004]", () => {
             registrationPage.logInButton.click()
             registrationPage.errorLocator.should("include.text", credentials.error)            
         })
+      })
+
+      it(`Successfull Login attempt [S_1003], [TC_1006]. Email: ${userData.email}, Password: ${userData.password}`, () => {
+        cy.visit('')
+        registrationPage.navigateTo
+        cy.typeAssert(registrationPage.loginEmailInput, userData.email)
+        cy.typeAssert(registrationPage.loginPasswordInput, userData.password)
+        registrationPage.logInButton.click()
+        cy.isDisplayed(myAccountPage.logOutButton)
+        myAccountPage.logOutButton.click()
+        registrationPage.pageLoaded
       })
 })
