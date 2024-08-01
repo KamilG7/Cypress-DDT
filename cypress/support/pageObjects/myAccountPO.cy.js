@@ -6,6 +6,10 @@ get logOutButton () {
     return cy.get("a").contains("Logout")
 }
 
+get addressesTab () {
+    return cy.get("a").contains("Addresses")
+}
+
 
 }
 
